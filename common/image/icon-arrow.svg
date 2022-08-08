@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 36 36">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #e67c00;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #e67c00;
+        stroke-width: 1px;
+      }
+    </style>
+  </defs>
+  <rect id="長方形_40_のコピー_4" data-name="長方形 40 のコピー 4" class="cls-1" x="13.5" y="17.5" width="9" height="1"/>
+  <path id="長方形_40_のコピー_4-2" data-name="長方形 40 のコピー 4" class="cls-2" d="M906.783,1482.62l4.027,2.96-0.593.8-4.027-2.96Z" transform="translate(-888.5 -1468.5)"/>
+  <path id="長方形_40_のコピー_4-3" data-name="長方形 40 のコピー 4" class="cls-2" d="M906.235,1489.67l3.9-3.12,0.625,0.78-3.9,3.12Z" transform="translate(-888.5 -1468.5)"/>
+  <circle id="楕円形_2_のコピー" data-name="楕円形 2 のコピー" class="cls-3" cx="18" cy="18" r="17.5"/>
+</svg>

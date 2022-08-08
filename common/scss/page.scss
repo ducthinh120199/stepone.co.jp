@@ -1,0 +1,1332 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------------------------------------------------
+
+   object
+         - index
+
+--------------------------------------------------------------------------------------------------*/
+@import "variable.scss";
+
+@mixin sp {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin w1024 {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+/*--------------------------------------------------------------------------------------------
+  index
+--------------------------------------------------------------------------------------------*/
+.main-visual__top {
+  width: 100%;
+  .l-wrapper {
+    position: relative;
+  }
+  &--bg {
+    width: 100%;
+    height: 52.5vw;
+    overflow: hidden;
+    position: relative;
+    img {
+      position: absolute;
+      top: 63%;
+      transform: translateY(-50%);
+      height: auto;
+    }
+  }
+  &--content {
+    width: 50%;
+    background-color: $orange;
+    position: absolute;
+    bottom: -55px;
+    left: 0;
+    color: #fff;
+    padding: 86px 50px 27px;
+    @include w1024 {
+      padding: 25px 25px 27px;
+    }
+    @include sp {
+      width: 100%;
+      bottom: -44.2vw;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 11px 20px 23px;
+    }
+    h2 {
+      font-size: 5.3rem;
+      line-height: 1.6;
+      font-weight: 400;
+      @include w1024 {
+        line-height: 1.3;
+      }
+      @include sp {
+        font-size: 6.5vw;
+      }
+    }
+    p {
+      font-size: 1.3rem;
+      margin: 57px 0 8px;
+      @include w1024 {
+        margin: 14px 0 8px;
+      }
+      @include sp {
+        margin-top: 3.622vw;
+      }
+    }
+  }
+  &--img {
+    width: 124px;
+    height: 48px;
+  }
+}
+
+.p-frame1-top {
+  padding: 175px 0 94px;
+  background: url(../image/bg-frame1-top.jpg) no-repeat right;
+  background-size: 75% 100%;
+  @include sp {
+    padding: 59.1675vw 0 11.35vw;
+    background-size: 85% 100%;
+  }
+  .l-wrapper {
+    display: flex;
+    @include sp {
+      display: block;
+    }
+  }
+  &__img {
+    width: 50%;
+    height: 463px;
+    @include sp {
+      width: 100%;
+      height: 60.375vw;
+      margin-bottom: 3.6625vw;
+    }
+  }
+  &__text {
+    padding-left: 45px;
+    @include sp {
+      padding-left: 0;
+      text-align: center;
+    }
+    h3 {
+      font-size: 3.8rem;
+      margin-bottom: 28px;
+      line-height: 1.5;
+      font-weight: 400;
+      @include sp {
+        font-size: 8.694vw;
+        margin-bottom: 3.381vw;
+        text-align: left;
+      }
+    }
+    p {
+      line-height: 2.4;
+      @include sp {
+        text-align: left;
+      }
+    }
+    p:nth-child(3) {
+      font-size: 1.7rem;
+      margin: 36px 0 39px;
+      @include sp {
+        font-size: 3.6225vw;
+        margin: 4.347vw 0;
+      }
+    }
+  }
+}
+
+@mixin bg-frame($img, $w, $h, $t, $l, $bt, $r) {
+  content: '';
+  position: absolute;
+  top: $t;
+  left: $l;
+  bottom: $bt;
+  right: $r;
+  width: $w;
+  height: $h;
+  background: url($img) no-repeat center;
+  background-size: cover;
+}
+
+.p-frame2-top {
+  background: url(../image/bg-orange2.jpg) no-repeat center;
+  background-size: cover;
+  padding: 24px 0 73px;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    @include bg-frame("../image/bg-frame2-top.png", 326px, 400px, 0, 0, auto, auto);
+    @include sp {
+      @include bg-frame("../image/bg-frame2-top.png", 48.3vw, 48.3vw, -6px, 0, auto, auto);
+    }
+  }
+  &::before {
+    @include bg-frame("../image/bg-frame2-bottom.png", 414px, 414px, auto, auto, -2px, 0);
+    @include sp {
+      @include bg-frame("../image/bg-frame2-bottom.png", 48.3vw, 48.3vw, auto, auto, 0, 0);
+    }
+  }
+  @include sp {
+    padding: 2.898vw 0 8.694vw;
+  }
+  .p-title-head {
+    color: #fff;
+    .txt {
+      border-top: 1px solid #fff;
+    }
+    .title-mess {
+      margin-top: 17px;
+      line-height: 1.8;
+      letter-spacing: 1px;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  &__item {
+    width: 488px;
+    position: relative;
+    @include w1024 {
+      width: calc(50% - 10px);
+    }
+    @include sp {
+      width: 100%;
+    }
+    &:not(:last-child) {
+      @include sp {
+        margin-bottom: 4.83vw;
+      }
+    }
+    &:last-child {
+      width: 100%;
+      margin-top: 59px;
+      @include sp {
+        margin-top: 0;
+      }
+      .p-frame2-top__text {
+        text-align: center;
+        @include sp {
+          margin-top: 14vw;
+        }
+      }
+      .c-button__orange {
+        min-height: 81px;
+        border-radius: 40px;
+        top: 298px;
+        padding: 21px 71px;
+        @include sp {
+          top: 50.715vw;
+          padding: 1.3vw 11.35vw;
+          border-radius: 14.85vw;
+        }
+        .txt {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 320px;
+    @include sp {
+      height: 60.375vw;
+    }
+    &.note-img {
+      &::after {
+        top: 10%;
+        right: 15%;
+      }
+    }
+  }
+  &__text {
+    font-size: 1.4rem;
+    padding: 0 20px;
+    margin-top: 73px;
+    color: #fff;
+    line-height: 1.8;
+    @include sp {
+      margin-top: 12vw;
+      padding: 0 3.62vw;
+      font-size: 2.898vw;
+    }
+  }
+  .c-button__orange {
+    position: absolute;
+    top: 304px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 285px;
+    padding-top: 15px;
+    border: none;
+    @include sp {
+      top: 52vw;
+    }
+  }
+}
+
+.p-frame3-top {
+  padding: 26px 0 83px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  @include sp {
+    padding: 3.1395vw 0 9.9vw; 
+  }
+  &::after {
+    @include bg-frame("../image/bg-frame3-top.png", 246px, 263px, -6px, 0, auto, auto);
+    @include sp {
+      @include bg-frame("../image/bg-frame3-top.png", 48.3vw, 48.3vw, -6px, 0, auto, auto);
+    }
+  }
+  &::before {
+    @include bg-frame("../image/bg-frame3-bottom.png", 351px, 353px, auto, auto, 0, 0);
+    @include sp {
+      @include bg-frame("../image/bg-frame3-bottom.png", 48.3vw, 48.3vw, auto, auto, 0, 0);
+    }
+  }
+  .l-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+  .p-title-head {
+    text-align: left;
+    .txt {
+      margin-top: 4px;
+    }
+  }
+  .p-frame__list {
+    margin-top: 28px;
+    text-align: left;
+  }
+  .c-button__orange {
+    margin-top: 64px;
+    padding: 17px 78px 21px 57px;
+  }
+}
+
+.p-frame4-top {
+  padding: 30px 0 60px;
+  background: url(../image/bg-frame1-top.jpg) no-repeat center;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  @include sp {
+    padding: 3.6225vw 0 7.245vw;
+  }
+  &::after {
+    @include bg-frame("../image/bg-frame4-top.png", 282px, 346px, 0, 0, auto, auto);
+    @include sp {
+      @include bg-frame("../image/bg-frame4-top.png", 48.3vw, 48.3vw, -6px, 0, auto, auto);
+    }
+  }
+  &::before {
+    @include bg-frame("../image/bg-frame4-bottom.png", 513px, 526px, auto, auto, 0, 0);
+    @include sp {
+      @include bg-frame("../image/bg-frame4-bottom.png", 48.3vw, 48.3vw, auto, auto, 0, 0);
+    }
+  }
+  .p-title-head {
+    .txt {
+      margin-top: 1px;
+    }
+  }
+  .p-frame__list {
+    margin-top: 29px;
+    text-align: left;
+  }
+  .c-button__orange {
+    margin-top: 31px;
+    padding: 17px 96px 21px 81px;
+    @include sp {
+      margin-top: 14.49vw;
+    }
+  }
+  .l-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/*--------------------------------------------------------------------------------------------
+  news
+--------------------------------------------------------------------------------------------*/
+.main-visual__sub {
+  width: 100%;
+  height: 330px;
+  background: url(../image/bg-orange2.jpg) no-repeat center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  @include sp {
+    height: 48.3vw;
+  }
+  &::after {
+    @include bg-frame("../image/bg-mv-sub-top.png", 308px, 400px, 0, 0, auto, auto);
+    @include sp {
+      @include bg-frame("../image/bg-mv-sub-top.png", 48.3vw, 48.3vw, -6px, 0, auto, auto);
+    }
+  }
+  &::before {
+    @include bg-frame("../image/bg-mv-sub-bottom.png", 33.3vw, 21.3vw, auto, auto, 0, -154px);
+    @include sp {
+      @include bg-frame("../image/bg-mv-sub-bottom.png", 32.3vw, 30.3vw, auto, auto, 0, -35px);
+    }
+  }
+  .p-title-head {
+    color: #fff;
+    padding-top: 80px;
+    @include sp {
+      padding-top: 6.5vw;
+    }
+    h3 {
+      letter-spacing: 0;
+    }
+    .txt {
+      border-top: 1px solid #fff;
+    }
+  }
+}
+
+.p-frame-news {
+  background: url(../image/bg-beige.jpg) no-repeat center;
+  background-size: cover;
+  padding: 85px 0;
+  @include sp {
+    padding: 10.143vw 0;
+  }
+  .p-frame__list {
+    flex-wrap: wrap;
+    .p-frame__item {
+      @include sp {
+        width: 100%;
+        &:not(:first-child) {
+          margin-top: 10.143vw;
+        }
+      }
+      &:nth-child(n+4) {
+        @include pc {
+          margin-top: 85px;
+        }
+      }
+      @include w1024 {
+        margin-top: 0 !important;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------------------------------------
+  voice
+--------------------------------------------------------------------------------------------*/
+.p-frame-voice {
+  padding: 85px 0;
+  @include sp {
+    padding: 10.143vw 0;
+  }
+  .p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 84px;
+    @include sp {
+      margin-bottom: 9.9vw;
+    }
+  }
+  .p-frame__list {
+    flex-wrap: wrap;
+  }
+  .p-frame__item {
+    @include sp {
+      width: 100%;
+      &:not(:first-child) {
+        margin-top: 10.143vw;
+      }
+    }
+    &:nth-child(n+4) {
+      @include pc {
+        margin-top: 50px;
+      }
+    }
+    @include w1024 {
+      margin-top: 0 !important;
+      margin-bottom: 50px;
+    }
+    &--list_category {
+      li {
+        min-width: 100px;
+        border-radius: 2px;
+      }
+    }
+    &--txt {
+      margin-top: 15px;
+      @include sp {
+        margin-top: 3.6225vw;
+      }
+    }
+  }
+  .c-button__orange {
+    margin-top: 0;
+  }
+}
+
+/*--------------------------------------------------------------------------------------------
+  policy
+--------------------------------------------------------------------------------------------*/
+.mv-policy {
+  .p-title-head {
+    .h3 {
+      font-size: 9.3rem;
+      @include sp {
+        font-size: 11.592vw;
+      }
+    }
+    .txt {
+      margin-top: 25px;
+    }
+  }
+}
+
+.p-frame-policy {
+  background: url(../image/bg-policy.jpg) no-repeat center;
+  background-size: cover;
+  padding: 80px 0;
+  @include sp {
+    padding: 9.66vw 0;
+  }
+  &__mess {
+    font-size: 1.5rem;
+    line-height: 2.2;
+    @include sp {
+      font-size: 3.139vw;
+    }
+  }
+  &__list {
+    margin-top: 76px;
+    @include sp {
+      margin-top: 8.45vw;
+    }
+  }
+  &__item {
+    padding-bottom: 30px;
+    @include sp {
+      padding-bottom: 3.662vw;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid #fff;
+      margin-bottom: 40px;
+      @include sp {
+        margin-bottom: 4.83vw;
+      }
+    }
+    &:last-child {
+      display: flex;
+      @include sp {
+        display: block;
+      }
+      h4 {
+        padding-top: 8px;
+      }
+      p {
+        margin-top: 0;
+        margin-left: 47px;
+        @include sp {
+          margin-top: 2.415vw;
+        }
+      }
+    }
+    h4 {
+      font-size: 2rem;
+      color: $orange;
+      letter-spacing: 2px;
+      @include sp {
+        font-size: 4.347vw;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      color: $black01;
+      margin-top: 22px;
+      line-height: 2.4;
+      letter-spacing: 1.5px;
+      @include sp {
+        font-size: 3.139vw;
+        margin-top: 3.6225vw;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------------------------------------
+  service
+--------------------------------------------------------------------------------------------*/
+.p-frame-service {
+  &__banner {
+    background: url(../image/service-banner1.jpg) no-repeat center;
+    background-size: cover;
+    padding: 175px 0 145px;
+    @include sp {
+      padding: 9.735vw 0 5.9vw;
+    }
+    h5 {
+      font-size: 4rem;
+      color: $orange;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      @include sp {
+        font-size: 9.177vw;
+      }
+      span {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+        @include sp {
+          font-size: 5.55vw;
+        }
+      }
+    }
+    h3 {
+      font-size: 4.2rem;
+      color: $orange;
+      margin-top: 18px;
+      letter-spacing: 2px;
+      @include sp {
+        font-size: 9.66vw;
+        margin-top: 2.415vw;
+        line-height: 1.3;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 2.5;
+      margin-top: 41px;
+      @include sp {
+        font-size: 3.1395vw;
+        margin-top: 4.83vw;
+      }
+    }
+    .c-button__orange {
+      min-height: 81px;
+      border-radius: 40px;
+      padding: 21px 71px;
+      margin-top: 60px;
+      @include sp {
+        min-height: 19.56vw;
+        border-radius: 40px;
+        padding: 1.898vw 9.177vw;
+        margin-top: 7.245vw;
+      }
+      p.h4 {
+        margin-top: 0;
+      }
+    }
+  }
+  &__detail {
+    padding: 90px 0 23px;
+    @include sp {
+      padding: 10.8675vw 0 2.6565vw;
+    }
+    & > h4 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #fff;
+      position: absolute;
+      width: calc(50% - 106px);
+      left: 0;
+      padding: 28px 0;
+      padding-left: calc(50% - 445px);
+      background: $orange;
+      letter-spacing: 1.2px;
+      @include w1024 {
+        width: 50%;
+        padding-left: 13%;
+      }
+      @include sp {
+        width: 84%;
+        font-size: 5.55vw;
+        padding: 3.381vw 0;
+        padding-left: 15%;
+      }
+      &::after {
+        @include bg-frame("../image/icon-service1.png", 33px, 51px, 50%, auto, auto, 363px);
+        transform: translateY(-50%);
+        @include w1024 {
+          right: 80%;
+        }
+        @include sp {
+          @include bg-frame("../image/icon-service1.png", 5.313vw, 7.96vw, 50%, auto, auto, 73.44vw);
+        }
+      }
+    }
+    & > p {
+      font-size: 1.5rem;
+      line-height: 2.5;
+      margin-top: 131px;
+      @include sp {
+        font-size: 3.13vw;
+        margin-top: 14.49vw;
+      }
+    }
+    & > h5 {
+      font-size: 1.7rem;
+      color: $orange;
+      background: #fff;
+      display: inline-block;
+      padding: 7px 37px 10px 29px;
+      margin-top: 42px;
+      @include sp {
+        font-size: 3.622vw;
+        margin-top: 2.83vw;
+        padding: 7px 17px 10px 15px;
+      }
+    }
+  }
+  &__list {
+    position: relative;
+  }
+  &__item {
+    &:nth-child(1) {
+      background: url(../image/bg-policy.jpg) no-repeat center;
+      background-size: cover;
+      padding-bottom: 100px;
+      @include sp {
+        padding-bottom: 12vw;
+      }
+      .p-frame-service__detail {
+        &:nth-child(2) {
+          & > h4 {
+            @include pc {
+              width: calc(50% - 114px);
+              padding-left: calc(50% - 424px);
+            }
+            @include w1024 {
+              width: 50%;
+              padding-left: 13%;
+            }
+            &::after {
+              @include bg-frame("../image/icon-service2.png", 64px, 44px, 50%, auto, auto, 322px);
+              transform: translateY(-50%);
+              @include sp {
+                @include bg-frame("../image/icon-service2.png", 7.96vw, 5.55vw, 50%, auto, auto, 71.15vw);
+              }
+            }
+          }
+        }
+        &:nth-child(3) {
+          & > h4 {
+            @include pc {
+              padding-left: calc(50% - 418px);
+              width: calc(50% - 116px);
+            }
+            @include w1024 {
+              width: 50%;
+              padding-left: 13%;
+            }
+            &::after {
+              @include bg-frame("../image/icon-service3.png", 66px, 41px, 50%, auto, auto, 318px);
+              transform: translateY(-50%);
+              @include sp {
+                @include bg-frame("../image/icon-service3.png", 7.245vw, 5vw, 50%, auto, auto, 71.7vw);
+              }
+            }
+          }
+        }
+        &:nth-child(4) {
+          & > h4 {
+            @include pc {
+              padding-left: calc(50% - 422px);
+              width: calc(50% - 146px);
+            }
+            @include w1024 {
+              width: 50%;
+              padding-left: 16%;
+            }
+            &::after {
+              @include bg-frame("../image/icon-service4.png", 54px, 63px, 50%, auto, auto, 300px);
+              transform: translateY(-50%);
+              @include sp {
+                @include bg-frame("../image/icon-service4.png", 6.76vw, 7.96vw, 50%, auto, auto, 72.5vw);
+              }
+            }
+          }
+          .p-frame-service__box {
+            width: 100%;
+            max-width: unset;
+          }
+        }
+      }
+    }
+    &:nth-child(2) {
+      padding-bottom: 92px;
+      @include sp {
+        padding-bottom: 9.66vw;
+      }
+      .p-frame-service__banner {
+        background: url(../image/service-banner2.jpg) no-repeat center;
+        background-size: cover;
+      }
+      .p-frame-service__detail {
+        & > h5 {
+          background-color: #feeecd;
+        }
+        & > h4 {
+          @include pc {
+            width: calc(50% - 159px);
+            padding-left: calc(50% - 500px);
+          }
+          @include w1024 {
+            width: 50%;
+            padding-left: 5%;
+          }
+          @include sp {
+            padding-left: 5%;
+          }
+          &::after {
+            display: none;
+          }
+        }
+      }
+      .p-frame-service__box {
+        background-color: #feeecd;
+      }
+    }
+    &:nth-child(3) {
+      padding-bottom: 100px;
+      @include sp {
+        padding-bottom: 12vw;
+      }
+      .p-frame-service__banner {
+        background: url(../image/service-banner3.jpg) no-repeat center;
+        background-size: cover;
+      }
+    }
+  }
+  .u-flex {
+    justify-content: space-between;
+    @include sp {
+      display: block;
+    }
+  }
+  &__box {
+    max-width: 478px;
+    background-color: #fff;
+    border-radius: 9px;
+    padding: 22px 23px 34px;
+    margin-top: 23px;
+    @include w1024 {
+      max-width: 48%;
+    }
+    @include sp {
+      width: 100%;
+      padding: 3.622vw;
+      margin-top: 3.62vw;
+      max-width: 100%;
+    }
+    h4 {
+      font-size: 2rem;
+      color: $orange;
+      border-bottom: 2px solid $orange;
+      padding-bottom: 10px;
+      line-height: 1.8;
+      @include sp {
+        font-size: 4.347vw;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 2.3;
+      margin-top: 16px;
+      @include sp {
+        font-size: 3.13vw;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------------------------------------
+  about
+--------------------------------------------------------------------------------------------*/
+.p-flex-about {
+  position: relative;
+  @include sp {
+    position: static;
+  }
+  .u-flex {
+    justify-content: flex-end;
+    @include sp {
+      display: block;
+    }
+  }
+  &__img {
+    position: absolute;
+    width: calc(50% - 172px);
+    height: 542px;
+    left: 0;
+    @include sp {
+      position: static;
+      width: 100%;
+      height: 65.2vw;
+    }
+  }
+  &__txt {
+    width: calc(50% + 100px);
+    @include sp {
+      width: 100%;
+    }
+  }
+}
+
+.p-frame1-about {
+  background: url(../image/bg-be-custom.jpg) no-repeat center;
+  background-size: cover;
+  min-height: 913px;
+  padding: 103px 0 87px;
+  @include sp {
+    min-height: auto;
+    padding: 12vw 0 9.66vw;
+  }
+  .p-flex-about__txt {
+    h3 {
+      font-size: 3.8rem;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 2px;
+      @include sp {
+        font-size: 8.694vw;
+        letter-spacing: 1px;
+        margin-top: 4.83vw;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 2.5;
+      margin-top: 28px;
+      @include sp {
+        font-size: 3.13vw;
+        margin-top: 3.381vw;
+      }
+      &:nth-child(3) {
+        margin-top: 40px;
+        @include sp {
+          margin-top: 4.83vw;
+        }
+      }
+      &:last-child {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        @include sp {
+          font-size: 3.864vw;
+        }
+      }
+    }
+  }
+}
+
+.p-frame2-about {
+  background: url(../image/bg-orange2.jpg) no-repeat center;
+  background-size: cover;
+  padding: 70px 0 120px;
+  overflow: hidden;
+  @include sp {
+    padding: 8.45vw 0 14.49vw;
+    position: relative;
+  }
+  &::after {
+    @include bg-frame("../image/bg-mv-sub-top.png", 308px, 400px, 0, 0, auto, auto);
+    @include sp {
+      @include bg-frame("../image/bg-mv-sub-top.png", 48.3vw, 48.3vw, -6px, 0, auto, auto);
+    }
+  }
+  &::before {
+    @include bg-frame("../image/bg-mv-sub-bottom.png", 33.3vw, 21.3vw, auto, auto, 0, -154px);
+    @include sp {
+      @include bg-frame("../image/bg-mv-sub-bottom.png", 32.3vw, 30.3vw, auto, auto, 0, -35px);
+    }
+  }
+  .p-title-head {
+    color: #fff;
+    .txt {
+      border-top: 1px solid #fff;
+    }
+  }
+  .u-flex {
+    justify-content: flex-start;
+    margin-top: 37px;
+    @include sp {
+      margin-top: 4.34vw;
+    }
+  }
+  .p-flex-about__img {
+    left: auto;
+    right: 0;
+    width: calc(50% + 134px);
+    height: 521px;
+    @include sp {
+      position: static;
+      width: 100%;
+      height: 62.79vw;
+    }
+  }
+  .p-flex-about__txt {
+    margin-top: 120px;
+    @include sp {
+      margin-top: 14.49vw;
+    }
+    h3 {
+      font-size: 5.3rem;
+      font-weight: 400;
+      color: $gray01;
+      background-color: #fff;
+      position: absolute;
+      width: calc(50% - 52px);
+      left: 0;
+      line-height: 1.6;
+      padding: 35px 0 40px;
+      padding-left: calc(50% - 500px);
+      z-index: 2;
+      @include w1024 {
+        width: 47%;
+        padding-left: 5%;
+        padding-right: 20px;
+      }
+      @include sp {
+        font-size: 12vw;
+        position: static;
+        width: 100%;
+        padding: 3.622vw;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 2.5;
+      color: #fff;
+      margin-top: 300px;
+      @include w1024 {
+        position: relative;
+      }
+      @include sp {
+        font-size: 3.13vw;
+        line-height: 2;
+        margin-top: 6vw;
+      }
+    }
+  }
+}
+
+.p-frame3-about {
+  background: url(../image/bg-beige.jpg) no-repeat center;
+  background-size: cover;
+  padding: 54px 0px 400px;
+  position: relative;
+  @include sp {
+    padding: 6.279vw 0;
+  }
+  .p-flex-about__img {
+    width: calc(50% - 77px);
+    height: 438px;
+    margin-top: 23px;
+    @include sp {
+      width: 100%;
+      height: 53.13vw;
+      margin-top: 2.898vw;
+    }
+  }
+  .p-flex-about__txt {
+    width: calc(50% + 24px);
+    @include sp {
+      width: 100%;
+    }
+    .p-title-head {
+      text-align: left;
+      @include sp {
+        margin-top: 6vw;
+      }
+      h3 {
+        letter-spacing: 1px;
+      }
+    }
+    & > p {
+      font-size: 1.5rem;
+      line-height: 2.5;
+      margin-top: 23px;
+      @include sp {
+        font-size: 3.13vw;
+        line-height: 2;
+        margin-top: 2.89vw;
+      }
+    }
+  }
+  &__item {
+    background-color: $orange;
+    padding: 45px 89px 56px;
+    position: absolute;
+    width: calc(50% + 500px);
+    right: 0;
+    margin-top: 31px;
+    color: #fff;
+    @include w1024 {
+      width: 90%;
+    }
+    @include sp {
+      width: 100%;
+      margin-top: 3.622vw;
+      position: static;
+      padding: 3.62vw;
+    }
+    h5 {
+      font-size: 1.7rem;
+      display: inline-block;
+      padding: 0 76px 16px 0;
+      border-bottom: 1px solid #fff;
+      @include sp {
+        font-size: 3.622vw;
+        padding: 0 16.9vw 3.622vw 0;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 2.5;
+      letter-spacing: 1.6px;
+      margin-top: 17px;
+      @include sp {
+        font-size: 3.13vw;
+        margin-top: 3.622vw;
+      }
+    }
+  }
+}
+
+.p-frame4-about {
+  background: url(../image/bg-be-custom.jpg) no-repeat center;
+  background-size: cover;
+  padding: 94px 0;
+  @include sp {
+    padding: 9.66vw 0;
+  }
+  .p-title-head {
+    text-align: left;
+    h3 {
+      @include sp {
+        font-size: 14.49vw;
+      }
+    }
+  }
+  &__item {
+    margin-top: 76px;
+    @include sp {
+      margin-top: 8.45vw;
+    }
+    h5 {
+      min-width: 292px;
+      font-size: 1.7rem;
+      background-color: #fff;
+      line-height: 1;
+      letter-spacing: 1.6px;
+      display: inline-block;
+      padding: 8px 18px 10px;
+      @include sp {
+        min-width: 70.5vw;
+        font-size: 3.622vw;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 2.5;
+      letter-spacing: 1.6px;
+      margin-top: 11px;
+      @include sp {
+        font-size: 3.13vw;
+        list-style: 2;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------------------------------------
+  contact
+--------------------------------------------------------------------------------------------*/
+.p-frame-contact {
+  background: url(../image/bg-frame1-top.jpg) no-repeat center;
+  background-size: cover;
+  padding: 80px 0;
+  @include sp {
+    padding: 9.66vw 0;
+  }
+  &__mess {
+    text-align: center;
+  }
+  .l-wrapper {
+    width: 800px;
+  }
+  .form-container {
+    margin-top: 67px;
+    @include sp {
+      margin-top: 7.245vw;
+    }
+  }
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    &__required {
+      label {
+        position: relative;
+        padding-right: 66px;
+        @include sp {
+          padding-right: 12.8vw;
+        }
+        &::after {
+          content: '必須';
+          font-size: 1.4rem;
+          color: #fff;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: $orange;
+          padding: 0 8px 2px;
+        }
+      }
+    }
+    .form-label {
+      display: inline-block;
+      margin-bottom: 13px;
+      label {
+        font-size: 1.5rem;
+      }
+      span {
+        font-size: 1.2rem;
+        margin-left: 5px;
+      }
+    }
+    input {
+      font-size: 1.5rem;
+      width: 100%;
+      height: 60px;
+      border-radius: 4px;
+      border: 1px solid #a0a0a0;
+      padding-left: 15px;
+      @include sp {
+        height: 12vw;
+      }
+    }
+    textarea {
+      width: 100%;
+      height: 290px;
+      resize: none;
+      border-radius: 4px;
+      border: 1px solid #a0a0a0;
+      padding: 15px;
+      @include sp {
+        height: 36.225vw;
+      }
+    }
+    select {
+      width: 50%;
+      height: 60px;
+      border-radius: 4px;
+      color: $orange;
+      border: 1px solid #a0a0a0;
+      text-align: center;
+      font-size: 1.5rem;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: url(../image/icon-droplist.png) 89% / 2.5% no-repeat #fff;
+      @include sp {
+        height: 12vw;
+        text-align: left;
+        padding-left: 15px;
+        background: url(../image/icon-droplist.png) 92% / 5.5% no-repeat #fff;
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: 42px;
+      @include sp {
+        margin-bottom: 7.245vw;
+      }
+    }
+  }
+  .form-policy {
+    &__link {
+      text-align: center;
+      line-height: 2.3;
+      a {
+        display: inline-block;
+        color: $orange;
+        text-decoration: underline;
+      }
+    }
+    &__check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 41px;
+      @include sp {
+        margin-top: 4.83vw;
+      }
+      input {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        border: 1px solid #a0a0a0;
+        margin-right: 5px;
+      }
+    }
+  }
+  .form-button__submit {
+    margin-top: 30px;
+    text-align: center;
+    .c-button__orange {
+      background-color: $orange;
+      color: #fff !important;
+      padding: 17px 153px 21px 115px;
+      opacity: 1;
+      white-space: nowrap;
+      &:hover {
+        opacity: 0.5;
+      }
+      &::after {
+        background: url(../image/icon-arrow-white.png) no-repeat center;
+        background-size: cover;
+      }
+      @include sp {
+        margin-top: 0.45vw;
+        padding: 4.1vw 19vw 5vw 12vw;
+      }
+    }
+  }
+}
+
+.sp {
+  display: none; 
+}
+
+.pc {
+  display: block; 
+}
+
+@include sp {
+  .sp {
+    display: block; 
+  }
+  .pc {
+    display: none; 
+  }
+}
